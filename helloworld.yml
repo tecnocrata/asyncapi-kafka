@@ -12,10 +12,12 @@ servers:
 channels:
   hello:
     publish:
+      operationId: answerToHello
       message:
         $ref: "#/components/messages/hello-msg"
   goodbye:
     publish:
+      operationId: answerToGoodbye
       message:
         $ref: "#/components/messages/goodbye-msg"
 components:
