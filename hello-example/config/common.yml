@@ -1,0 +1,29 @@
+default:
+  app:
+    name: Hello world application
+    version: 0.1.0
+
+  broker:
+    kafka:
+      clientId: helloWorldApplication
+      brokers:
+        - broker.mycompany.com
+      consumerOptions:
+        groupId: helloWorldApplication
+      topics:
+        - hello
+        - goodbye
+      topicSeparator: '__'
+      topicPrefix:
+
+development:
+
+test:
+
+staging:
+
+production:
+  broker:
+    kafka:
+      ssl:
+        rejectUnauthorized: true
