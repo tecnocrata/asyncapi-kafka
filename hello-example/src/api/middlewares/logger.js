@@ -1,9 +1,10 @@
-const util = require('util');
-const { yellow, blue, magenta } = require('chalk');
+const util = require("util");
+const { yellow, blue, magenta } = require("chalk");
 
 module.exports = (message, next) => {
-  const arrow = message.inbound ? blue('←') : magenta('→');
-  const action = message.inbound ? 'received' : 'sent';
+  console.log("THE MESSAGE: ", message);
+  const arrow = message.inbound ? blue("←") : magenta("→");
+  const action = message.inbound ? "received" : "sent";
   console.log(`${arrow} ${yellow(message.topic)} was ${action}:`);
   console.log(util.inspect(message.payload, { depth: null, colors: true }));
   next();

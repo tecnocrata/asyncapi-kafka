@@ -1,15 +1,17 @@
-const Router = require('hermesjs/lib/router');
-const {validateMessage} = require('../../lib/message-validator');
+const Router = require("hermesjs/lib/router");
+const { validateMessage } = require("../../lib/message-validator");
 const router = new Router();
-const helloHandler = require('../handlers/hello');
+const helloHandler = require("../handlers/hello");
 module.exports = router;
 
-router.use('hello', async (message, next) => {
+router.use("hello", async (message, next) => {
   try {
-    await validateMessage(message.payload,'hello','','publish');
-    await helloHandler.answerToHello({message});
+    console.log("Message-->", message);
+    await validateMessage(message.payload, "hello", "", "publish");
+    await helloHandler.answerToHello({ message });
     next();
   } catch (e) {
+    console.log("Error-->", e);
     next(e);
   }
 });

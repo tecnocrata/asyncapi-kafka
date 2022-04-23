@@ -19,7 +19,7 @@ services:
       KEYCLOAK_IMPORT: "/tmp/microcks-realm.json"
       KEYCLOAK_FRONTEND_URL: "http://localhost:18080/auth"
     volumes:
-      - "./keycloak-realm/microcks-realm-sample.json:/tmp/microcks-realm.json"
+      - "./microks/keycloak-realm/microcks-realm-sample.json:/tmp/microcks-realm.json"
 
   postman:
     image: quay.io/microcks/microcks-postman-runtime:latest

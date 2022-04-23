@@ -30,7 +30,7 @@ docker-compose exec kafka bash #to enter kafka
 
 ```
 /bin/kafka-console-producer --topic topic-name --bootstrap-server localhost:9092
->....
+# I still don't know how to send messages here
 ```
 
 ### Listen messages (not needed)

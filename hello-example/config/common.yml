@@ -7,13 +7,15 @@ default:
     kafka:
       clientId: helloWorldApplication
       brokers:
-        - localhost:29092
+        # - localhost:29092
+        - localhost:9092
       consumerOptions:
         groupId: helloWorldApplication
       topics:
-        - hello
-        - goodbye
-      topicSeparator: "__"
+        # - hello
+        # - goodbye
+        - Helloworldapplication-0.1.1-hello
+      topicSeparator: # "__"
       topicPrefix:
 
 development:
