@@ -36,7 +36,7 @@ docker-compose exec kafka bash #to enter kafka
 ### Send messages (from within the container)
 
 ```
-/bin/kafka-console-producer --topic topic-name --bootstrap-server localhost:9092
+/bin/kafka-console-producer --topic hello --bootstrap-server localhost:9092
 # I still don't know how to send messages properly, it seems they are json messages
 ```
 
