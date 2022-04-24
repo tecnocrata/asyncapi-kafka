@@ -17,7 +17,7 @@ Check file `config\common.yml` and update `topicSeparator` and `topicPrefix` acc
 
 Finally, update the handlers at `src\api\handlers` those will content the logic ultimately.
 
-# Kafka & Zookeeper lunch
+# Kafka & Zookeeper launch
 
 ```
 docker-compose up --build --remove-orphans
@@ -37,7 +37,7 @@ docker-compose exec kafka bash #to enter kafka
 
 ```
 /bin/kafka-console-producer --topic topic-name --bootstrap-server localhost:9092
-# I still don't know how to send messages here
+# I still don't know how to send messages properly, it seems they are json messages
 ```
 
 ### Listen messages (not needed)
@@ -49,7 +49,8 @@ docker-compose exec kafka bash #to enter kafka
 # Using Microcks
 
 ```bash
-docker-compose -f docker-compose-microks.yml -f docker-compose-microks-kafka-zookeeper.yml up --build --remove-orphan
+cd c
+docker-compose -f docker-compose-microcks.yml -f docker-compose-microcks-kafka-zookeeper.yml up --build --remove-orphan
 ```
 
 Open a new browser tab and point to the http://localhost:8080 endpoint. This will redirect you to the Keycloak Single Sign On page for login. Use the following default credentials:
@@ -58,3 +59,7 @@ Open a new browser tab and point to the http://localhost:8080 endpoint. This wil
 - Password: microcks123
 
 You will be redirected to the main dashboard page. You can now start using Microcks.
+
+Import the asyncapi schema file, and create a test, please be sure the application name & version match with the expected topic by the client, otherwise the message won't arrive to the consumer.
+
+Create and launch the test, check the consumer side, and hopefully the messages will be there.
