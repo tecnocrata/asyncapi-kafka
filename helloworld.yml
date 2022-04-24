@@ -26,13 +26,13 @@ components:
       payload:
         type: object
         properties:
-          name:
+          nombre:
             type: string
           sentAt:
             $ref: "#/components/schemas/sent-at"
       examples:
         - payload:
-            name: "{{randomString(10)}}"
+            nombre: "{{randomString(10)}}"
             sentAt: "{{now()}}"
     goodbye-msg:
       payload:
