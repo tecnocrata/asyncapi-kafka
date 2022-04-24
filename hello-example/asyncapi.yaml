@@ -1,21 +1,21 @@
-asyncapi: "2.0.0"
+asyncapi: "2.3.0"
 info:
   title: Hello world application
-  version: "0.1.0"
+  version: "0.1.6"
 servers:
   production:
-    url: broker.mycompany.com
+    url: localhost:9092
     protocol: kafka
     description: This is "My Company" broker.
     security:
       - user-password: []
 channels:
-  hello:
+  txb.helloservice.1.event.user.hellosend:
     publish:
       operationId: answerToHello
       message:
         $ref: "#/components/messages/hello-msg"
-  goodbye:
+  txb.helloservice.1.event.user.goodbyesend:
     publish:
       operationId: answerToGoodbye
       message:
@@ -23,24 +23,33 @@ channels:
 components:
   messages:
     hello-msg:
+      name: "melloHessage"
       payload:
         type: object
         properties:
-          name:
+          nombre:
             type: string
           sentAt:
             $ref: "#/components/schemas/sent-at"
+      examples:
+        - payload:
+            nombre: "{{randomString(10)}}"
+            sentAt: "{{now(dd/MM/yyyy HH:mm:ss)}}"
     goodbye-msg:
+      name: "moodbyeGessage"
       payload:
         type: object
         properties:
           sentAt:
             $ref: "#/components/schemas/sent-at"
+      examples:
+        - payload:
+            sentAt: "{{now(dd/MM/yyyy HH:mm:ss)}}"
   schemas:
     sent-at:
       type: string
       description: The date and time a message was sent.
-      format: datetime
+      # format: dateTime
   securitySchemes:
     user-password:
       type: userPassword

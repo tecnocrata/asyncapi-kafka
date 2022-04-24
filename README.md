@@ -8,7 +8,14 @@ npm install -g @asyncapi/generator
 
 ```bash
 ag ./helloworld.yml @asyncapi/nodejs-template -p server=production -o hello-example
+cd hello-example
+npm install
+npm start
 ```
+
+Check file `config\common.yml` and update `topicSeparator` and `topicPrefix` according your publisher, some ones tend to create a topic with a prefix like `microcks`
+
+Finally, update the handlers at `src\api\handlers` those will content the logic ultimately.
 
 # Kafka & Zookeeper lunch
 

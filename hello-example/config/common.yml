@@ -1,22 +1,20 @@
 default:
   app:
     name: Hello world application
-    version: 0.1.0
+    version: 0.1.6
 
   broker:
     kafka:
       clientId: helloWorldApplication
       brokers:
-        # - localhost:29092
         - localhost:9092
       consumerOptions:
         groupId: helloWorldApplication
       topics:
-        # - hello
-        # - goodbye
-        - Helloworldapplication-0.1.1-hello
-      topicSeparator: # "__"
-      topicPrefix:
+        - txb.helloservice.1.event.user.hellosend
+        - txb.helloservice.1.event.user.goodbyesend
+      topicSeparator: #'__'
+      topicPrefix: Helloworldapplication-0.1.6-
 
 development:
 

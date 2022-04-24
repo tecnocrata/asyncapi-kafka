@@ -10,8 +10,8 @@ const errorLogger = require('./middlewares/error-logger');
 const config = require('../lib/config');
 const serverConfig = config.broker.kafka;
 const KafkaAdapter = require('hermesjs-kafka');
-const hello = require('./routes/hello.js');
-const goodbye = require('./routes/goodbye.js');
+const txbHelloservice1EventUserHellosend = require('./routes/txb.helloservice.1.event.user.hellosend.js');
+const txbHelloservice1EventUserGoodbyesend = require('./routes/txb.helloservice.1.event.user.goodbyesend.js');
 
 app.addAdapter(KafkaAdapter, serverConfig);
 
@@ -20,10 +20,10 @@ app.use(string2json);
 app.use(logger);
 
 // Channels
-console.log(cyan.bold.inverse(' SUB '), gray('Subscribed to'), yellow('hello'));
-app.use(hello);
-console.log(cyan.bold.inverse(' SUB '), gray('Subscribed to'), yellow('goodbye'));
-app.use(goodbye);
+console.log(cyan.bold.inverse(' SUB '), gray('Subscribed to'), yellow('txb.helloservice.1.event.user.hellosend'));
+app.use(txbHelloservice1EventUserHellosend);
+console.log(cyan.bold.inverse(' SUB '), gray('Subscribed to'), yellow('txb.helloservice.1.event.user.goodbyesend'));
+app.use(txbHelloservice1EventUserGoodbyesend);
 
 app.use(errorLogger);
 app.useOutbound(errorLogger);
