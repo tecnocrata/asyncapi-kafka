@@ -1,7 +1,7 @@
 asyncapi: "2.3.0"
 info:
   title: Hello world application
-  version: "0.1.5"
+  version: "0.1.6"
 servers:
   production:
     url: localhost:9092
@@ -49,7 +49,7 @@ components:
     sent-at:
       type: string
       description: The date and time a message was sent.
-      format: dateTime
+      # format: dateTime
   securitySchemes:
     user-password:
       type: userPassword
