@@ -38,3 +38,16 @@ docker-compose exec kafka bash #to enter kafka
 ```
 /bin/kafka-console-consumer --topic topic-name --from-beginning --bootstrap-server localhost:9092
 ```
+
+# Using Microcks
+
+```bash
+docker-compose -f docker-compose-microks.yml -f docker-compose-microks-kafka-zookeeper.yml up --build --remove-orphan
+```
+
+Open a new browser tab and point to the http://localhost:8080 endpoint. This will redirect you to the Keycloak Single Sign On page for login. Use the following default credentials:
+
+- Username: admin
+- Password: microcks123
+
+You will be redirected to the main dashboard page. You can now start using Microcks.

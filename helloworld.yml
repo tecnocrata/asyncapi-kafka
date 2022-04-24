@@ -1,7 +1,7 @@
 asyncapi: "2.0.0"
 info:
   title: Hello world application
-  version: "0.1.1"
+  version: "0.1.2"
 servers:
   production:
     url: localhost:9092
@@ -10,12 +10,12 @@ servers:
     security:
       - user-password: []
 channels:
-  hello:
+  txb.helloservice.1.event.user.hellosend:
     publish:
       operationId: answerToHello
       message:
         $ref: "#/components/messages/hello-msg"
-  goodbye:
+  txb.helloservice.1.event.user.goodbyesend:
     publish:
       operationId: answerToGoodbye
       message:
