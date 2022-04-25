@@ -1,3 +1,4 @@
+# Please refer to: https://github.com/microcks/microcks/tree/master/install/docker-compose
 version: "2"
 
 services:
@@ -19,7 +20,7 @@ services:
       KEYCLOAK_IMPORT: "/tmp/microcks-realm.json"
       KEYCLOAK_FRONTEND_URL: "http://localhost:18080/auth"
     volumes:
-      - "./microks/keycloak-realm/microcks-realm-sample.json:/tmp/microcks-realm.json"
+      - "./keycloak-realm/microcks-realm-sample.json:/tmp/microcks-realm.json"
 
   postman:
     image: quay.io/microcks/microcks-postman-runtime:latest

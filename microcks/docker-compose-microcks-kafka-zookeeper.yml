@@ -1,3 +1,4 @@
+# Please refer to: https://github.com/microcks/microcks/tree/master/install/docker-compose
 version: "2"
 
 services:
@@ -40,7 +41,7 @@ services:
     image: quay.io/microcks/microcks:latest
     container_name: microcks
     volumes:
-      - "./microks/config:/deployments/config"
+      - "./config:/deployments/config"
     ports:
       - "8080:8080"
       - "9090:9090"
@@ -65,6 +66,6 @@ services:
     container_name: microcks-async-minion
     restart: on-failure
     volumes:
-      - "./microks/config:/deployments/config"
+      - "./config:/deployments/config"
     environment:
       - QUARKUS_PROFILE=docker-compose

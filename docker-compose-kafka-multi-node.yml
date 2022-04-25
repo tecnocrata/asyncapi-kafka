@@ -1,3 +1,4 @@
+# Please refer to: https://www.baeldung.com/ops/kafka-docker-setup
 version: "2"
 services:
   zookeeper-1:
