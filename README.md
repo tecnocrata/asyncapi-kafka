@@ -49,7 +49,7 @@ docker-compose exec kafka bash #to enter kafka
 # Using Microcks
 
 ```bash
-cd c
+cd microcks
 docker-compose -f docker-compose-microcks.yml -f docker-compose-microcks-kafka-zookeeper.yml up --build --remove-orphan
 ```
 

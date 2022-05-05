@@ -9,5 +9,5 @@ const handler = (module.exports = {});
  */
 handler.answerToHello = async ({ message }) => {
   // Implement your business logic here...
-  console.log("Message processed...", message.payload);
+  console.log("Hello message processed...", message.payload);
 };
